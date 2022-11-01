@@ -1,0 +1,2 @@
+This is a quiick DSA challenge for the next two weeks done in both C++ and python3. For additional helpful nuggets
+they will be listed down and how they can help bring down either space, time complexity or may just for kicks
