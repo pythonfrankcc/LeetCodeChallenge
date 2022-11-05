@@ -11,3 +11,10 @@ Their is however a rule of thumb that states "You should always avoid optimizati
 It would also be be good if you understood:
 a)The differences between a heap table and a BST
 b)The collections module in python(https://www.geeksforgeeks.org/python-collections-module/)
+
+
+INT_MIN and INT_MAX, if you come across it in the algorithms written here are the reasons for the same
+Most of the time in competetive programming, there is need to assign a variable, the maximum or minimum value that a data type can hold, remembering such a large and precise number comes out to be a difficult job and thus C++ has certaing macros to represent these numbers, you may need to include <limits.h> or <climits> depending on the compiler
+
+INT_MAX is a macro that specifies that an interger variable cannot store any value beyond this limit
+INT_MIN specifies that a variable cannot store any value below this limit.
