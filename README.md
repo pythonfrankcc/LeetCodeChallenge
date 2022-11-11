@@ -18,3 +18,6 @@ Most of the time in competetive programming, there is need to assign a variable,
 
 INT_MAX is a macro that specifies that an interger variable cannot store any value beyond this limit
 INT_MIN specifies that a variable cannot store any value below this limit.
+
+
+Use https://cppinsights.io/ to get to understand the inner workings of your C++ code
