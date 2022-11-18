@@ -1,4 +1,4 @@
-This is a quick DSA challenge for the next two weeks done in both C++ and python3. For additional helpful nuggets
+This is a quick DSA challenge for the next several days done in both C++ and python3. For additional helpful nuggets
 they will be listed down and how they can help bring down either space, time complexity or may just for kicks
 
 So difference between emplace_back and push_back. Push_back is safer as compared to its former. The only key merit is that as opposed to
@@ -21,3 +21,19 @@ INT_MIN specifies that a variable cannot store any value below this limit.
 
 
 Use https://cppinsights.io/ to get to understand the inner workings of your C++ code
+
+
+The difference between the //(floor division) and /(normal division) in python is that normal division will always return a floating point whereas the floor division always produces an interger, ie, rounded down to the nearest int
+
+example: 15 // 4 = 3 , which is an int
+       : 15 / 4 = 3.75, which is a float
+
+       :2/2 = 1.0 , which is a float
+       :2//2 = 1, which is an interger
+
+
+when using the sort algorithm there are two variations to it, list.sort() and sorted(list). The main difference between the two is list.sort() rearranges the original list while sorted() returns a new list. This can be rather useful in space complexity when it comes to huge lists
+
+
+Quick fix algorithms:
+1) Binary Search : complexity of 0(log n)
