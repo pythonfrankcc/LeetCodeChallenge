@@ -35,5 +35,54 @@ example: 15 // 4 = 3 , which is an int
 when using the sort algorithm there are two variations to it, list.sort() and sorted(list). The main difference between the two is list.sort() rearranges the original list while sorted() returns a new list. This can be rather useful in space complexity when it comes to huge lists
 
 
+Templates in C++
+The concept is equivalent to generics in other languages but more powerful in terms of usage
+
+-> what you need to know is that templates get evaluated at compile time
+->It can be used instead of function overloading to automate the creation of a function based on what input it is being fed
+->This introduces the concept of metaprogramming which is writing code for compile time evaluation  rather than run time
+
+
+Here is an example of the use of templates instead of function overloading
+template<typename T>
+void Print(T value)
+{
+       std::cou<<value<<std::endl;
+}
+int main()
+{
+       Print(5);
+       Print(5.5f);
+       Print("Hello");
+}
+
+
+here is an example of one of the standard usage of a template. Suppose you wanted to create a class array, that creates an array on the stack. The size of an array is determined at compile time, that is, the size has to be known at compile time.
+This makes it the perfect opportunity for the use of a template since they are evaluated at compile time
+
+Here is the code example of the same
+//template use in classes
+
+#include<iostream>
+
+template<typename T,int N>
+class Array
+{
+private:
+       T m_Array[N];
+public:
+       int GetSize() const {return N;}
+};
+
+int main()
+{
+       //creation of the class instance
+       Array<int,5> array;
+       //calling the method
+       std::cout<<array.GetSize()<<std::endl;
+}
+
+
+
 Quick fix algorithms:
 1) Binary Search : complexity of 0(log n)
