@@ -7,6 +7,16 @@ constructing a data type and then later pushing it to the container as done by p
 Their is however a rule of thumb that states "You should always avoid optimizations that make yoour code less safe or less clear unless the performance benefit is big enough to show up in your applications benchmark."
 
 
+An ASCII chart consists of 128 characters. ASCII works well for simple English  but UTF is better for modern global needs accomodating special characters such as emojis and many different languages such as Chinese and Hebrew.
+
+we have functions such as the ord() function which returns the Unicode code from a given character, with its polar opposite being the chr() for normal bit strings.
+
+Here is an example
+value  = ord("A")
+print(value)
+
+solution = 65
+
 
 It would also be be good if you understood:
 a)The differences between a heap table and a BST
@@ -19,6 +29,49 @@ Most of the time in competetive programming, there is need to assign a variable,
 INT_MAX is a macro that specifies that an interger variable cannot store any value beyond this limit
 INT_MIN specifies that a variable cannot store any value below this limit.
 
+//example use case of INT_MIN
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <limits.h>
+using namespace std;
+
+vector<vector<int> > minAbsDiffPairs(vector<int>& arr)
+{
+    vector<vector<int> > ans;
+    int n = arr.size();
+    //sorting the vector
+    sort(arr.begin(), arr.end());
+    // Stores the minimal absolute difference
+    //to use INT_MAX you need to include the climits.h or limits.h
+    int minDiff = INT_MAX;
+    for (int i = 0; i < n - 1; i++)
+    {
+        //keep updating the minDiff till you get the least
+        minDiff = min(minDiff, abs(arr[i] - arr[i + 1]));
+    }
+    for (int i = 0; i < n - 1; i++)
+    {
+        vector<int> pair;
+        if (abs(arr[i] - arr[i + 1]) == minDiff)
+        {
+            pair.push_back(min(arr[i], arr[i + 1]));
+            pair.push_back(max(arr[i], arr[i + 1]));
+            ans.push_back(pair);
+        }
+    }
+    return ans;
+}
+
+int main() {
+    vector<int> arr = { 2,5,8,9,10 };
+    int N = (sizeof arr) / (sizeof arr[0]);
+    vector<vector<int> > pairs = minAbsDiffPairs(arr);
+    for (auto v : pairs)
+        cout << v[0] << " " << v[1] << endl;
+
+    return 0;
+}
 
 Use https://cppinsights.io/ to get to understand the inner workings of your C++ code
 
@@ -86,3 +139,5 @@ int main()
 
 Quick fix algorithms:
 1) Binary Search : complexity of 0(log n)
+2) KMP(Knuth-Morris-Pratt) Algorithm for pattern searching
+
