@@ -136,8 +136,36 @@ int main()
 }
 
 
+In every algorithm that you develop you need to understand the computational complexity that comes with it, ie, the space and time complexity of the algos
+
+The aspect of time is normally more important than space.
+In computer programming you are allowed to use only 256 MB of memory per problem but 4 MB for each function. Factors to consider for the long term usage of an algorithm: Efficiency, Finiteness and Correctnesss.
+
+In the test for how efficient an algorithm is we have what is called an asymptotic notation, ie, this tells us how much better an algorithm is when compared to another algorithm. There are three notations:
+1) Big O notation-The most popular
+2) Theta notation
+3)
+
+Here we look at some of the most common:
+1) 0(1) Solution: This is when we have constant time regardless of the input
+here is an example of the same
+int findsum(int n)
+{
+       n * (n+1)//this is constant time since all the variables are known before hand
+}
+2)0(n) Solution:
+Here is when you loop from 0 to n like so
+def loopthroughlist(lst1):
+       for i in range(len(lst1)):
+              print(i)
+
+3) 0(n2): Iterate over the elements and in to the elements
+4) 2 log(n): This is for example in the case of a binary search
+
 
 Quick fix algorithms:
 1) Binary Search : complexity of 0(log n)
-2) KMP(Knuth-Morris-Pratt) Algorithm for pattern searching
+2) KMP(Knuth-Morris-Pratt) Algorithm for pattern searching, this has a linear time in the case of complexity
+3) Merge sort
+Merge sort is best used with linked lits, ie, data structures that do not have random access to memory while its cousin quick sort is best used for data structures that have random access implemented within the data structure.
 
