@@ -95,6 +95,43 @@ The concept is equivalent to generics in other languages but more powerful in te
 ->It can be used instead of function overloading to automate the creation of a function based on what input it is being fed
 ->This introduces the concept of metaprogramming which is writing code for compile time evaluation  rather than run time
 
+In the case of push_back() for several items here is an example of the same, but is also dependent on the compiler
+answer.push_back({nums[i] , nums[low] , nums[high]});
+
+
+An exception is an Event, which occurs during execution of the program. It is also known as a runtime error.
+A good example of the inner workings of the same is as follow
+
+def divide(x,y):
+       try:
+              #floor division
+              result = x//y
+       except ZeroDivisionError:
+              print("Sorry you are dividing by zero")
+       else:
+              print("The answer is: ",result)
+       finally:
+              print("This part is always executed regardless of what happens in the above clause")
+#calling the function
+divide(3,2)
+divide(3,0)
+
+
+One of the reason for having a try and except clause is so that your program does not just terminate ubruptly
+Here is an example
+try:
+       with open("file.log") as file:
+              read_data = file.read()
+except:
+       print("Could not open the selected file")
+
+In the case that you want to be specific is catching the exception that you wanted and print it on the screen
+try:
+       with open("file.log") as file:
+              read_data = file.read()
+except FileNotFoundError as fnf_error:
+       print(fnf_error)
+
 
 Here is an example of the use of templates instead of function overloading
 template<typename T>
