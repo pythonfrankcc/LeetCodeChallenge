@@ -1,10 +1,10 @@
 This is a quick DSA challenge for the next several days done in both C++ and python3. For additional helpful nuggets
-they will be listed down and how they can help bring down either space, time complexity or may just for kicks
+they will be listed down and how they can help bring down either space, time complexity or may be just for kicks
 
 So difference between emplace_back and push_back. Push_back is safer as compared to its former. The only key merit is that as opposed to
 constructing a data type and then later pushing it to the container as done by push_back, emplace_back does not construct any temporary object and just pushes the object directly into the container.
 
-Their is however a rule of thumb that states "You should always avoid optimizations that make yoour code less safe or less clear unless the performance benefit is big enough to show up in your applications benchmark."
+Their is however a rule of thumb that states "You should always avoid optimizations that make your code less safe or less clear unless the performance benefit is big enough to show up in your applications benchmark."
 
 
 An ASCII chart consists of 128 characters. ASCII works well for simple English  but UTF is better for modern global needs accomodating special characters such as emojis and many different languages such as Chinese and Hebrew.
@@ -21,6 +21,8 @@ solution = 65
 It would also be be good if you understood:
 a)The differences between a heap table and a BST
 b)The collections module in python(https://www.geeksforgeeks.org/python-collections-module/)
+
+One of the ways to access the last element in a vectos is vector.back(), which comes quite handy
 
 
 INT_MIN and INT_MAX, if you come across it in the algorithms written here are the reasons for the same
@@ -83,6 +85,38 @@ example: 15 // 4 = 3 , which is an int
 
        :2/2 = 1.0 , which is a float
        :2//2 = 1, which is an interger
+
+When declaring pointers on one liners, this is the syntax
+
+int* x, *y; >> you have to stick a pointer on each variable
+
+as opposed to
+ int* x, y >> this means is that x is a pointer whereas y is a normal int 
+
+ in classes it is quite a popular style that the getters are declared as consts(promising not to change the contents of the actual variables) as they are read only in a sense like so while this is not the case for setters as setters actually are supposed to change the variable in question
+
+ like so, but as always there are exemtions in the case that you do want a variable in the GETTER method that may be used for verbose debugging you can circumnavigate the const keyword by declaring the variable as mutable and thus being able to play around with it
+
+#include <iostream>
+class Entity
+{
+private:
+       int m_X, m_Y;
+       mutable int var;
+public:
+       int GETX() const
+       {
+              var = 2; //able to be changed since it is declared as mutable
+              cout<<m_X;
+       }
+       
+       int SETX(int m_X)
+       {
+              m_X = 2;
+
+       }
+};
+
 
 
 when using the sort algorithm there are two variations to it, list.sort() and sorted(list). The main difference between the two is list.sort() rearranges the original list while sorted() returns a new list. This can be rather useful in space complexity when it comes to huge lists
